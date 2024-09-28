@@ -1,0 +1,23 @@
+React Hooks internally use a linked list data structure to manage the state and effects associated with each component. Here's why:
+1. Preservation of Order:
+
+Hooks rely on the order in which they are called within a component. This order is crucial for React to correctly associate state and effects with their respective hooks.
+A linked list maintains the order of elements naturally, ensuring that the hooks are tracked in the same sequence as they were declared.
+
+2. Dynamic Nature of Hooks:
+
+Unlike class components, where state and lifecycle methods are defined upfront, hooks allow for a more dynamic approach.
+You can conditionally add or remove hooks within a component, depending on the situation.
+Linked lists are efficient for insertions and deletions compared to arrays, making them ideal for this dynamic behavior.
+
+3. Performance Considerations:
+
+While arrays are generally faster for accessing elements by index, linked lists excel in scenarios where insertions and deletions are frequent.
+In the context of React hooks, the order of hooks is more important than random access, making linked lists a suitable choice.
+
+4. Implementation Details:
+
+React's internal representation of components (known as "fibers") uses a linked list structure to store the hook data. This design choice allows React to efficiently manage the state and lifecycle of components, especially in complex and deeply nested component trees.
+
+
+Linked list are better in traversal, insertion and deletion operation than the arrays which help virtual dom to manipulated states and components.
